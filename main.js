@@ -1,5 +1,5 @@
 // Reverses the order of the digits (in base 10) of the given integer
-// Contract: the input must be an integral number
+// Contract: the input must be a positive integral number (or 0)
 function reverseInt(int) {
     let reversedInt = 0;
     while (int != 0) {
