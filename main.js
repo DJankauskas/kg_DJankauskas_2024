@@ -13,3 +13,7 @@ function main() {
         console.error("Usage: node main.js [integer 1] [integer 2] ...")
     }
 }
+
+if (requestAnimationFrame.main === module) {
+    main();
+}
