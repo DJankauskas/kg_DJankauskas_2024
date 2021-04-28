@@ -14,6 +14,6 @@ function main() {
     }
 }
 
-if (requestAnimationFrame.main === module) {
+if (require.main === module) {
     main();
 }
