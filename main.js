@@ -13,31 +13,6 @@ function reverseInt(int) {
 // Associates the numerical value of each digit to its phonetic representation.
 const DIGIT_PNONUNCIATION_MAP = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
 
-// function intToPronunciation(int) {
-//     let output = '';
-//     // Label negative integers as negative, then convert
-//     // their sign for internal processing
-//     if (int < 0) {
-//         int *= -1;
-//         output += 'Negative';
-//     }
-
-//     // Reverse the integer so that when processing digits from least to greatest
-//     // significant order, the first digit processed will be the greatest in the original digit
-//     // Allows appending instead of prepending strings, which is more efficient
-//     let reversedInt = reverseInt(int);
-
-//     // Traverse the reversed int from least to most significant order
-//     // (or most to least significant order of the original int)
-//     while (true) {
-//         output += DIGIT_PNONUNCIATION_MAP[reversedInt % 10];
-//         reversedInt = Math.floor(reversedInt / 10);
-//         if (reversedInt == 0) break;
-//     }
-
-//     return output;
-// }
-
 function intToPronunciation(int) {
     let output = '';
     // Label negative integers as negative, then convert their sign for internal processing
@@ -68,7 +43,7 @@ function main() {
     const args = process.argv.slice(2);
     try {
         const pronouncedInts = args.map(arg => {
-            const int = parseInt(arg);
+            const int = parseInt(arg, 10);
             if (isNaN(int)) {
                 throw new Error('Not an integer.');
             }
